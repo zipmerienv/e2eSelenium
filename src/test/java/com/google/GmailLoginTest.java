@@ -25,7 +25,7 @@ public class GmailLoginTest {
     private By passwordTextBoxLocator = By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/div/div[1]/div/div[1]/input");
     private By submitButtonLocator = By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/form/div[2]/div/div[3]/div[2]/div[1]/div/div[2]");
 
-    @BeforeClass
+    @BeforeClass (enabled = false)
     public void setUp() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
@@ -33,7 +33,7 @@ public class GmailLoginTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test(enabled = false)
     public void LoginTest(){
         driver.get("https://www.gmail.com");
         loginButton = driver.findElement(loginButtonLocator);
