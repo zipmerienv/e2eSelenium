@@ -11,8 +11,8 @@
         <!--</test>-->
         <test name="Windows + FireFox Test">
             <classes>
-                <class name="com.google.EnvTestData" />
-                <class name="com.google.*" />
+                <class name="com.google.SearchGoogleTest" />
+                <!--<class name="com.google.*" />-->
             </classes>
         </test>
     </tests>
