@@ -3,6 +3,7 @@ package com.google;
 import com.google.core.WebDriverTestBase;
 import com.google.pages.GoogleResultPage;
 import com.google.pages.GoogleSearchPage;
+import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -21,6 +22,7 @@ public class SearchGoogleTest extends WebDriverTestBase {
     private WebElement searchButton;
     private String searchData = "selenium";
 
+    @Description("search google test - simple one")
     @Test
     public void searchGoogleTest() {
         driver.get("https://www.google.com.ua/");
