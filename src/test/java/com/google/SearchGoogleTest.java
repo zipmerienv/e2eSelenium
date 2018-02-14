@@ -38,7 +38,7 @@ public class SearchGoogleTest extends WebDriverTestBase {
         driver.quit();
     }
 
-    @Test
+    @Test(enabled = false)
     public void searchGooglePageObjectTest(){
 
         driver.get("https://www.google.com.ua/");

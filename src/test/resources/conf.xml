@@ -9,7 +9,7 @@
         <!--<class name="com.google.SearchGoogleTest" />-->
         <!--</classes>-->
         <!--</test>-->
-        <test name="Windows + FireFox Test">
+        <test name="Windows + Chrome Test">
             <classes>
                 <class name="com.google.SearchGoogleTest" />
                 <!--<class name="com.google.*" />-->
