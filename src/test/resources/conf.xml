@@ -6,7 +6,7 @@
         <!--<parameter name="remoteBrowser" value="chrome"/>-->
         <!--</parameters>-->
         <!--<classes>-->
-        <!--<class name="com.google.GoogleSearchTest" />-->
+        <!--<class name="com.google.SearchGoogleTest" />-->
         <!--</classes>-->
         <!--</test>-->
         <test name="Windows + FireFox Test">
