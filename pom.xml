@@ -7,29 +7,23 @@
     <groupId>e2e-selenium</groupId>
     <artifactId>e2e-selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
-        <junit.version>4.12</junit.version>
         <selenium.version>3.8.1</selenium.version>
         <testng.version>6.13.1</testng.version>
-        <allure-testng.version>2.0-BETA22</allure-testng.version>
         <webdrivermanager.version>2.1.0</webdrivermanager.version>
+        <selenide.version>4.8</selenide.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <selenide.version>4.8</selenide.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <allure-testng.version>2.0-BETA21</allure-testng.version>
+        <maven.surefire.plugin>2.20.1</maven.surefire.plugin>
         <aspectj.version>1.8.13</aspectj.version>
-        <maven.surefile.plugin>2.20.1</maven.surefile.plugin>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -37,24 +31,26 @@
             <version>${allure-testng.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+        <!--закоменчено в угоду адептов секты свидететелей селенида
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>${selenide.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -62,14 +58,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefile.plugin}</version>
+                <version>${maven.surefire.plugin}</version>
                 <configuration>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <!--suiteXmlFiles>
+                    <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/conf.xml</suiteXmlFile>
-                    </suiteXmlFiles> -->
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
