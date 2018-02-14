@@ -31,7 +31,7 @@ public class OELoginPassTest {
     private By MenuLocator = By.id("");
 
 
-    @BeforeClass
+    @BeforeClass (enabled = false)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -39,9 +39,9 @@ public class OELoginPassTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test(enabled = false)
     public void LoginTest(){
-        driver.get("https://learningplatform.stg.openenglish.com/login.html");
+        driver.get("https://learningplatform.stg.openenglish.com/login");
         closeButn = driver.findElement(closeButnLocator);
         closeButn.click();
 

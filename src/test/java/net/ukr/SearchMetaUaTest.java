@@ -24,7 +24,7 @@ public class SearchMetaUaTest {
     private WebElement resultLink;
     private String searchData = "Selenium";
 
-    @BeforeClass
+    @BeforeClass (enabled = false)
     public void SetUp() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
@@ -32,7 +32,7 @@ public class SearchMetaUaTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test (enabled = false)
     public void searchMetaUaTestMethod() {
         driver.get("https://www.ukr.net/");
         searchString = driver.findElement(searchStringLocator);
