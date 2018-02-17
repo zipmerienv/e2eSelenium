@@ -1,5 +1,6 @@
 package com.google.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,12 +18,12 @@ public class GoogleResultPage {
     public GoogleResultPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Find link {1}")
     public WebElement findLink(){
         linkField = driver.findElement(linkLocator);
         return linkField;
     }
-
+    @Step("Find elements {2}")
     public List findElements(){
         resultList = driver.findElements(linksLocator);
         return resultList;

@@ -1,6 +1,5 @@
 package com.google.util;
 
-import com.google.common.io.Files;
 import com.google.core.WebDriverTestBase;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -10,8 +9,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.File;
-import java.io.IOException;
 
 public class ScreenShotOnFailListener implements ITestListener {
     private  WebDriver driver;
@@ -22,7 +19,8 @@ public class ScreenShotOnFailListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        driver = ((WebDriverTestBase) iTestResult.getInstance()).driver;
+        saveScreenshot( iTestResult.getMethod().getQualifiedName() );
     }
 
     @Override
