@@ -1,5 +1,6 @@
 package com.google.core;
 
+import com.google.util.ScreenShotOnFailListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,13 +8,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
 
 import java.util.concurrent.TimeUnit;
 
+@Listeners(ScreenShotOnFailListener.class)
 public class WebDriverTestBase {
 
-    protected WebDriver driver;
+    public WebDriver driver;
     protected BrowsersEnum browser = BrowsersEnum.valueOf(System.getProperty("browser", "CHROME"));
 
     @BeforeClass
@@ -44,5 +47,6 @@ public class WebDriverTestBase {
     public void tearDown() {
         //driver.close(); //current tab
         driver.quit(); //close at all
+
     }
 }
