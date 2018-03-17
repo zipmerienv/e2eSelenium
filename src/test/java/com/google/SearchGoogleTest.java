@@ -7,6 +7,7 @@ import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -31,9 +32,9 @@ public class SearchGoogleTest extends WebDriverTestBase {
         driver.get( "https://www.google.com.ua/" );
         searchField = driver.findElement( searchFieldLocator );
         searchField.sendKeys( searchData );
-        //searchString.submit();
-        searchButton = driver.findElement( searchButtonLocator );
-        searchButton.click();
+        searchField.submit();
+        //searchButton = driver.findElement( searchButtonLocator );
+        //searchButton.click();
         //linkField = driver.findElement(linkLocator);
         resultList = driver.findElements( linkLocator );
         for (WebElement element : resultList) {
@@ -44,8 +45,7 @@ public class SearchGoogleTest extends WebDriverTestBase {
     }
 
 
-// добавить лисенер public TestWatcher screenshotOnFail = new TestWatcher() - см вилеро по лисенерам
-    @Test
+    @Test (enabled = false)
     public void searchGooglePageObjectTest() {
 
         driver.get( "https://www.google.com.ua/" );
@@ -55,8 +55,5 @@ public class SearchGoogleTest extends WebDriverTestBase {
         linkField = resultPage.findLink();
         Assert.assertTrue( linkField.getText().contains( searchData ) );
         driver.close();
-
-
     }
-
 }

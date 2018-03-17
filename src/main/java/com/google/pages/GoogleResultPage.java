@@ -18,12 +18,12 @@ public class GoogleResultPage {
     public GoogleResultPage(WebDriver driver) {
         this.driver = driver;
     }
-    @Step("Find link {1}")
+    @Step("Searches for {1} test")
     public WebElement findLink(){
         linkField = driver.findElement(linkLocator);
         return linkField;
     }
-    @Step("Find elements {2}")
+    @Step("Searches for {2} test")
     public List findElements(){
         resultList = driver.findElements(linksLocator);
         return resultList;

@@ -28,7 +28,7 @@ public class WebDriverTestBase {
                 WebDriverManager.firefoxdriver().setup();  //with latest version of driver
                 driver = new FirefoxDriver();
                 break;
-            case EDGE:
+            case REMOTE:
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
                 break;

@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.surefire.plugin>2.20.1</maven.surefire.plugin>
         <aspectj.version>1.8.13</aspectj.version>
+        <io.cucumber.version>2.3.0</io.cucumber.version>
     </properties>
     <dependencies>
         <dependency>
@@ -51,7 +52,21 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${io.cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${io.cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-jvm</artifactId>
+            <version>${io.cucumber.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

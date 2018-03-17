@@ -18,7 +18,7 @@ public class GoogleSearchPage {
         this.driver = driver;
     }
 
-    @Step("Search for {0}")
+    @Step("Searches for {0} test")
     public void searchFor(String searchData){
         searchField = driver.findElement(searchFieldLocator);
         searchField.sendKeys(searchData);
